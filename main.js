@@ -132,8 +132,59 @@ const printDuckName = (arr) =>{
     outputDom('duckDiv', domString);
 };
 
+const choseBlue = () =>{
+    
+    let myArr = [];
+
+    for(let value of ducks){
+        if(value.color === 'blue'){
+            myArr.push(value);
+        }
+    }
+
+    printDuckName(myArr);
+}
+
+const chosePink = () =>{
+    let myArr = [];
+
+    for(let value of ducks){
+        if(value.color === 'pink'){
+            myArr.push(value);
+        }
+    }
+
+    printDuckName(myArr);
+}
+
+const choseGreen = () =>{
+    console.log("blue");
+}
+
+const choseFemale = () =>{
+    console.log("blue");
+}
+const choseMale = () =>{
+    console.log("blue");
+}
+
+const choseRubber = () =>{
+    console.log("blue");
+}
+const events = () => {
+    document.getElementById('blue').addEventListener('click', choseBlue);
+    document.getElementById('pink').addEventListener('click', chosePink);
+    document.getElementById('green').addEventListener('click', choseGreen);
+
+    document.getElementById('female').addEventListener('click', choseFemale);
+    document.getElementById('male').addEventListener('click', choseMale);
+
+    document.getElementById('rubber').addEventListener('click', choseRubber);
+}
+
 const init = () =>{
     printDuckName(ducks);
+    events();
 };
 
 init();
