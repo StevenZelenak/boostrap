@@ -104,7 +104,36 @@ const ducks = [
 
 ];
 
-console.log(ducks);
-const outputDom = () =>{
 
+
+const outputDom = (divID, str) =>{
+
+        let selectedDiv = document.getElementById(divID);
+        selectedDiv.innerHTML = str;
 }
+
+const printDuckName = (arr) =>{
+
+    let domString = '';
+
+    for(let value of arr){
+        domString += '<div class ="col-md-4">';
+        domString += '<div class="card">';
+        domString += `   <img src="${value.imageURL}" class="card-img-top" alt="...">`;
+        domString += '       <div class="card-body">';
+        domString += `           <h5 class="card-title">${value.name}</h5>`;
+        domString += `           <p class="card-text">${value.socialStatus}</p>`;
+        domString += `           <p class="card-text">${value.diet}</p>`;
+        domString += '       </div>';
+        domString += '</div>';
+        domString += '</div>';
+    }
+
+    outputDom('duckDiv', domString);
+};
+
+const init = () =>{
+    printDuckName(ducks);
+};
+
+init();
